@@ -1,0 +1,12 @@
+#!/bin/sh
+case $1 in
+    "start" )
+        docker start alap-db;;
+    "stop" )
+        docker stop alap-db;;
+    "init" )
+        docker create --name alap-db -p 127.0.0.1:9042:9042 cassandra:3.11;;
+    "destroy" )
+        docker rm -f alap-db;;
+esac
+
